@@ -7,11 +7,14 @@ public class Person {
 	private final String name;
 	private final int age;
 	private final String address;
+	private static int ID = 1;
 
 	public Person(String name, int age, String address) {
+		this.id = ID;
 		this.name = name;
 		this.age = age;
 		this.address = address;
+		ID++;
 	}
 
 	public int getId() {
