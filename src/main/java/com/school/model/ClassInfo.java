@@ -7,8 +7,8 @@ public class ClassInfo {
 	private int id;
 	private static int ID = 1;
 	private Standard standard;
-	private List<Teacher> teachers;
-	private List<Student> students;
+	private List<Teacher> teachers = new ArrayList<>();
+	private List<Student> students = new ArrayList<>();
 
 	public ClassInfo(Standard standard) {
 		this.standard = standard;
@@ -24,8 +24,12 @@ public class ClassInfo {
 		return standard;
 	}
 
-	public List<Teacher> getFaculties() {
+	public List<Teacher> getTeachers() {
 		return teachers;
+	}
+	
+	public List<Student> getStudents(){
+		return students;
 	}
 
 	public List<Subject> getSubjects() {
