@@ -1,5 +1,5 @@
 package com.school.model;
 
 public enum Standard {
-	SIXTH, SEVENTH, EIGHTH
+	SIXTH, SEVENTH, EIGHTH, NINETH
 }
