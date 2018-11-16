@@ -3,10 +3,12 @@ package com.school.model;
 import java.util.List;
 
 import org.junit.AfterClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import junit.framework.Assert;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClassInfoTest {
 	private static final int ID = 1;
 	private static final Standard STANDARD = Standard.SEVENTH;
