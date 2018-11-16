@@ -1,5 +1,6 @@
 package com.school.model;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,6 +11,11 @@ public class StudentTest {
 	private static final Standard STANDARD = Standard.EIGHTH;
 
 	private static Student STUDENT = new Student(STANDARD, NAME, AGE, ADDRESS);
+
+	@AfterClass
+	public static void beforeClass() {
+		Person.reset();
+	}
 
 	@Test
 	public void getName() {

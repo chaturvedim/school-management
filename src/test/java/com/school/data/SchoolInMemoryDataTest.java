@@ -1,6 +1,9 @@
-package com.school.model;
+package com.school.data;
 
 import org.junit.Test;
+
+import com.school.data.SchoolInMemoryData;
+import com.school.model.Standard;
 
 import junit.framework.Assert;
 

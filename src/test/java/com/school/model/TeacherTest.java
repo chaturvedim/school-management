@@ -1,5 +1,6 @@
 package com.school.model;
 
+import org.junit.AfterClass;
 import org.junit.Test;
 
 import junit.framework.Assert;
@@ -11,6 +12,11 @@ public class TeacherTest {
 	private static final Subject SUBJECT = Subject.MATHS;
 
 	private static Teacher TEACHER = new Teacher(SUBJECT, NAME, AGE, ADDRESS);
+
+	@AfterClass
+	public static void beforeClass(){
+		Person.reset();
+	}
 
 	@Test
 	public void getName() {

@@ -1,4 +1,11 @@
-package com.school.model;
+package com.school.data;
+
+import com.school.model.ClassInfo;
+import com.school.model.School;
+import com.school.model.Standard;
+import com.school.model.Student;
+import com.school.model.Subject;
+import com.school.model.Teacher;
 
 public class SchoolInMemoryData {
 	private School school = new School("Beersheba");
