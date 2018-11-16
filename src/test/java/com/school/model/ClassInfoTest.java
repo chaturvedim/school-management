@@ -2,10 +2,13 @@ package com.school.model;
 
 import java.util.List;
 
+import org.junit.AfterClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import junit.framework.Assert;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClassInfoTest {
 	private static final int ID = 1;
 	private static final Standard STANDARD = Standard.SEVENTH;
@@ -13,6 +16,11 @@ public class ClassInfoTest {
 	private static final Teacher TEACHERNEGATIVE = new Teacher(Subject.GEOGRAPHY, "name", 40, "address");
 	private static final Student STUDENT = new Student(STANDARD, "my name", 29, "my address");
 	private final static ClassInfo CLASS_INFO = new ClassInfo(STANDARD);
+
+	@AfterClass
+	public static void beforeClass(){
+		Person.reset();
+	}
 
 	@Test
 	public void getId() {

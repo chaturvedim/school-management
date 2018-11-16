@@ -37,5 +37,8 @@ public class Person {
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-	
+
+	public static void reset(){
+		ID = 1;
+	}
 }
