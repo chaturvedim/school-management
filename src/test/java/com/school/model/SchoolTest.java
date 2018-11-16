@@ -3,9 +3,9 @@ package com.school.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
 
 public class SchoolTest {
 	private static final String NAME = "my name";

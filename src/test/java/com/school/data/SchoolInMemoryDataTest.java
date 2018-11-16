@@ -1,11 +1,11 @@
 package com.school.data;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.school.data.SchoolInMemoryData;
 import com.school.model.Standard;
 
-import junit.framework.Assert;
 
 public class SchoolInMemoryDataTest {
 	private static SchoolInMemoryData schoolInMemoryData = new SchoolInMemoryData();

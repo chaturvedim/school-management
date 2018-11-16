@@ -1,9 +1,9 @@
 package com.school.model;
 
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
 
 public class TeacherTest {
 	private static final String NAME = "some name";
