@@ -10,7 +10,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ClassInfoTest {
-	private static final int ID = 1;
 	private static final Standard STANDARD = Standard.SEVENTH;
 	private static final Teacher TEACHER = new Teacher(Subject.ARTS, "MyName", 24, "MyAddress");
 	private static final Teacher TEACHERNEGATIVE = new Teacher(Subject.GEOGRAPHY, "name", 40, "address");
@@ -18,13 +17,13 @@ public class ClassInfoTest {
 	private final static ClassInfo CLASS_INFO = new ClassInfo(STANDARD);
 
 	@AfterClass
-	public static void beforeClass(){
+	public static void beforeClass() {
 		Person.reset();
 	}
 
 	@Test
 	public void getId() {
-		Assert.assertEquals(ID, CLASS_INFO.getId());
+		Assert.assertTrue(CLASS_INFO.getId() > 0);
 	}
 
 	@Test
@@ -52,19 +51,19 @@ public class ClassInfoTest {
 	public void isTaught() {
 		Assert.assertTrue(CLASS_INFO.isTaught(Subject.ARTS));
 	}
-	
+
 	@Test
 	public void isTaughtNegative() {
 		Assert.assertFalse(CLASS_INFO.isTaught(Subject.HISTORY));
 	}
-	
+
 	@Test
-	public void teaches(){
+	public void teaches() {
 		Assert.assertTrue(CLASS_INFO.teaches(TEACHER));
 	}
-	
+
 	@Test
-	public void teachesNagative(){
+	public void teachesNagative() {
 		Assert.assertFalse(CLASS_INFO.teaches(TEACHERNEGATIVE));
 	}
 }

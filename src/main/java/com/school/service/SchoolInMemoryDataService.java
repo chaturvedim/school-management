@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.school.data.SchoolInMemoryData;
 import com.school.model.ClassInfo;
+import com.school.model.School;
 import com.school.model.Standard;
 import com.school.model.Student;
 import com.school.model.Teacher;
@@ -79,4 +80,23 @@ public class SchoolInMemoryDataService implements SchoolDataService {
 		return null;
 	}
 
+	@Override
+	public ClassInfo getClass(Standard standard) {
+		for (ClassInfo clazz : schoolData.getSchool().getClasses()) {
+			if (clazz.getStandard() == standard) {
+				return clazz;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public School getSchool() {
+		return schoolData.getSchool();
+	}
+
+	@Override
+	public List<ClassInfo> getClasses() {
+		return schoolData.getSchool().getClasses();
+	}
 }

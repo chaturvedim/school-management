@@ -8,7 +8,7 @@ import com.school.model.Subject;
 import com.school.model.Teacher;
 
 public class SchoolInMemoryData {
-	private School school = new School("Beersheba");
+	public School school = new School("Beersheba");
 
 	public SchoolInMemoryData() {
 		school.addClass(getClassSixth());

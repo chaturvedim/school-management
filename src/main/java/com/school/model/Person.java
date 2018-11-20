@@ -4,10 +4,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Person {
 	private int id;
-	private final String name;
-	private final int age;
-	private final String address;
+	private String name;
+	private int age;
+	private String address;
 	private static int ID = 1;
+
+	public Person() {
+	}
 
 	public Person(String name, int age, String address) {
 		this.id = ID;
@@ -32,13 +35,13 @@ public class Person {
 	public String getAddress() {
 		return address;
 	}
-	
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
 
-	public static void reset(){
+	public static void reset() {
 		ID = 1;
 	}
 }

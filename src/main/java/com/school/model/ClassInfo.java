@@ -10,6 +10,10 @@ public class ClassInfo {
 	private List<Teacher> teachers = new ArrayList<>();
 	private List<Student> students = new ArrayList<>();
 
+	public ClassInfo() {
+
+	}
+
 	public ClassInfo(Standard standard) {
 		this.standard = standard;
 		this.id = ID;
@@ -27,8 +31,8 @@ public class ClassInfo {
 	public List<Teacher> getTeachers() {
 		return teachers;
 	}
-	
-	public List<Student> getStudents(){
+
+	public List<Student> getStudents() {
 		return students;
 	}
 

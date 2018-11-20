@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.school.model.ClassInfo;
+import com.school.model.School;
 import com.school.model.Standard;
 import com.school.model.Student;
 import com.school.model.Teacher;
@@ -20,6 +22,16 @@ public class SchoolRestApi {
 
 	public SchoolRestApi(SchoolDataService schoolDataService) {
 		this.schoolDataService = schoolDataService;
+	}
+
+	@GetMapping
+	public School getSchool() {
+		return schoolDataService.getSchool();
+	}
+
+	@GetMapping(path = "/classes")
+	public List<ClassInfo> getClasses() {
+		return schoolDataService.getClasses();
 	}
 
 	@GetMapping(path = "/teachers")
@@ -50,5 +62,10 @@ public class SchoolRestApi {
 	@GetMapping(path = "/classes/{standard}/students")
 	public List<Student> getStudents(@PathVariable int standard) {
 		return schoolDataService.getStudents(Standard.from(standard));
+	}
+
+	@GetMapping(path = "/classes/{standard}")
+	public ClassInfo getClass(@PathVariable int standard) {
+		return schoolDataService.getClass(Standard.from(standard));
 	}
 }

@@ -3,7 +3,11 @@ package com.school.model;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Student extends Person {
-	private final Standard standard;
+	private Standard standard;
+
+	public Student() {
+		super();
+	}
 
 	public Student(Standard standard, String name, int age, String address) {
 		super(name, age, address);
