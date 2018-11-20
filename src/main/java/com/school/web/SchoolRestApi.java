@@ -2,44 +2,53 @@ package com.school.web;
 
 import java.util.List;
 
-import com.school.model.ClassInfo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.school.model.Standard;
 import com.school.model.Student;
 import com.school.model.Teacher;
 import com.school.service.SchoolDataService;
 
+@RestController
+@RequestMapping("/school")
 public class SchoolRestApi {
+
 	public SchoolDataService schoolDataService;
 
-	ClassInfo classInfo = new ClassInfo(Standard.EIGHTH);
-
 	public SchoolRestApi(SchoolDataService schoolDataService) {
-		super();
 		this.schoolDataService = schoolDataService;
 	}
 
+	@GetMapping(path = "/teachers")
 	public List<Teacher> getTeachers() {
 		return schoolDataService.getTeachers();
 	}
 
-	public Teacher getTeacher(int id) {
+	@GetMapping(path = "/teachers/{id}")
+	public Teacher getTeacher(@PathVariable int id) {
 		return schoolDataService.getTeacher(id);
 	}
 
-	public List<Teacher> getTeacher(Standard standard) {
-		return schoolDataService.getTeachers(standard);
+	@GetMapping(path = "/classes/{standard}/teachers")
+	public List<Teacher> getTeacherByStandard(@PathVariable int standard) {
+		return schoolDataService.getTeachers(Standard.from(standard));
 	}
 
+	@GetMapping(path = "/students")
 	public List<Student> getStudents() {
 		return schoolDataService.getStudents();
 	}
 
-	public Student getStudent(int id) {
+	@GetMapping(path = "/students/{id}")
+	public Student getStudent(@PathVariable int id) {
 		return schoolDataService.getStudent(id);
 	}
 
-	public List<Student> getStudents(Standard standard) {
-		return schoolDataService.getStudents(standard);
+	@GetMapping(path = "/classes/{standard}/students")
+	public List<Student> getStudents(@PathVariable int standard) {
+		return schoolDataService.getStudents(Standard.from(standard));
 	}
-
 }
